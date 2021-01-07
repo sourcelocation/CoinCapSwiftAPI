@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE10581B25A63BE200A792ED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10581A25A63BE200A792ED /* main.swift */; };
+		CE10582325A63BF700A792ED /* Coincap.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10582225A63BF700A792ED /* Coincap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		CE10581725A63BE200A792ED /* CoinCapSwiftAPI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CoinCapSwiftAPI; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE10581A25A63BE200A792ED /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		CE10582225A63BF700A792ED /* Coincap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coincap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				CE10581A25A63BE200A792ED /* main.swift */,
+				CE10582225A63BF700A792ED /* Coincap.swift */,
 			);
 			path = CoinCapSwiftAPI;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE10581B25A63BE200A792ED /* main.swift in Sources */,
+				CE10582325A63BF700A792ED /* Coincap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

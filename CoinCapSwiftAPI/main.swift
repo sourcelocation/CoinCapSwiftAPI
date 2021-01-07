@@ -7,5 +7,8 @@
 
 import Foundation
 
-print("Hello, World!")
+Coincap().assets { (cryptocurrencies) in
+    print("Done.")
+}
 
+RunLoop.main.run()
