@@ -7,7 +7,7 @@
 
 import Foundation
 
-Coincap().assets { (cryptocurrencies) in
+Coincap().assets(ids: ["bitcoin", "ethereum", "nano"]) { (cryptocurrencies) in
     print("Done.")
 }
 

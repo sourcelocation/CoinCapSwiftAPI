@@ -8,9 +8,9 @@
 import Foundation
 
 class Coincap {
-    func assets(search: String? = nil, ids: String? = nil, limit: Int = 100, offset: Int = 0, completion: @escaping ([Crypto]) -> Void) {
-        
-        let url = URL(string: "http://api.coincap.io/v2/assets?\(search != nil ? "search=\(search!)&" : "")\(ids != nil ? "ids=\(ids!)&" : "")limit=\(limit)&offset=\(offset)")!
+    func assets(search: String? = nil, ids: [String]? = nil, limit: Int = 100, offset: Int = 0, completion: @escaping ([Crypto]) -> Void) {
+        let ids1 = ids?.joined(separator: ",")
+        let url = URL(string: "http://api.coincap.io/v2/assets?\(search != nil ? "search=\(search!)&" : "")\(ids1 != nil ? "ids=\(ids1!)&" : "")limit=\(limit)&offset=\(offset)")!
 
         let task = URLSession.shared.dataTask(with: url) {(data1, response, error) in
             guard let data1 = data1 else {print(error ?? "Coincap: No error but data is empty!"); return }
@@ -20,7 +20,7 @@ class Coincap {
             
             var cryptocurrencies: [Crypto] = []
             for cryptoData in data {
-                let crypto = Crypto(id: cryptoData["id"] as? String, rank: Int(cryptoData["rank"] as! String)!, symbol: cryptoData["symbol"] as? String, name: cryptoData["name"] as? String, supply: Double(cryptoData["supply"] as! String)!, maxSupply: Double((cryptoData["maxSupply"] as? String) ?? "Null") ?? nil, marketCapUsd: Double(cryptoData["marketCapUsd"] as! String)!, volumeUsd24Hr: Double(cryptoData["volumeUsd24Hr"] as! String)!, priceUsd: Double(cryptoData["priceUsd"] as! String)!, changePercent24Hr: Double(cryptoData["changePercent24Hr"] as! String)!, vwap24Hr: Double((cryptoData["vwap24Hr"] as? String) ?? "Null") ?? nil)
+                let crypto = Crypto(id: cryptoData["id"] as? String, rank: Int(cryptoData["rank"] as! String)!, symbol: cryptoData["symbol"] as? String, name: cryptoData["name"] as? String, supply: Double(cryptoData["supply"] as! String)!, maxSupply: Double((cryptoData["maxSupply"] as? String) ?? "Null") ?? nil, marketCapUsd: Double((cryptoData["marketCapUsd"] as? String) ?? "Null") ?? nil, volumeUsd24Hr: Double((cryptoData["volumeUsd24Hr"] as? String) ?? "Null") ?? nil, priceUsd: Double((cryptoData["priceUsd"] as? String) ?? "Null") ?? nil, changePercent24Hr: Double((cryptoData["changePercent24Hr"] as? String) ?? "Null") ?? nil, vwap24Hr: Double((cryptoData["vwap24Hr"] as? String) ?? "Null") ?? nil)
                 cryptocurrencies.append(crypto)
             }
             completion(cryptocurrencies)
