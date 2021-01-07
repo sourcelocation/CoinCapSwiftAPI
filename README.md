@@ -3,5 +3,8 @@ A Swift CoinCap API
 
 ## Usage:
 ``` swift
-  var a = "awdw"
+  Coincap().assets { (cryptocurrencies) in
+    print(cryptocurrencies.map { $0.name })
+    // Prints ["Bitcoin", "Ethereum", "Tether", "XRP" ... ]
+  }
 ```
