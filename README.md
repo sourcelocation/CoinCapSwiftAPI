@@ -16,3 +16,10 @@ Coincap().assets(search: "Bitcoin") { (cryptocurrencies) in
     // Prints ["Bitcoin", "Bitcoin Cash", "Bitcoin SV" ... ]
 }
 ```
+#### Search assets by id:
+``` swift
+Coincap().assets(ids: ["bitcoin", "ethereum", "nano"]) { (cryptocurrencies) in
+    print(cryptocurrencies.map { $0.name })
+    // Prints ["Bitcoin", "Ethereum", "Nano"]
+}
+```
