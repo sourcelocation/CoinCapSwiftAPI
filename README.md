@@ -1,5 +1,5 @@
 # CoinCapSwiftAPI
-A Swift CoinCap API
+A CoinCap API written fully on modern language Swift.
 
 ## Usage:
 ``` swift
