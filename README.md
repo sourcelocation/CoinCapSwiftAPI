@@ -1,5 +1,5 @@
 # CoinCapSwiftAPI
-A CoinCap API written fully on a modern language Swift.
+A CoinCap API written on a modern language Swift.
 
 ## Usage
 #### Get assets sorted by rank:
